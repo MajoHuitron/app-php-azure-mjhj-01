@@ -1,17 +1,12 @@
 <?php
-include_once ('connect.php');
+  include ('connect.php');  
+  session_start();
+  
+  $sql = "SELECT Continent FROM world.country WHERE Name = '" . $_SESSION['pais'] . "'"; 
+  $query = $conn -> prepare($sql); 
+  $query -> execute(); 
+  $results = $query -> fetchAll(PDO::FETCH_OBJ); 
 
-    $sql = 'SELECT id, firstname, lastname, email, reg_date FROM MyGuests ORDER BY lastname';
-
-    foreach ($conn->query($sql) as $row) {
-        echo $row['id'] . " | ";
-        echo $row['firstname'] . " | ";
-        echo $row['lastname'] . " | ";
-        echo $row['email'] . " | ";
-        echo $row['reg_date'] . "<br>";
-    }
-
-    // use exec() because no results are returned
-    $conn->exec($sql);
-
-$conn = null;
+//  var_dump($results); // 
+  echo $results[0] -> Continent;
+?>
