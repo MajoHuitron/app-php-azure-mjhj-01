@@ -1,10 +1,15 @@
 <?php
   include ('connect.php');
   
-  $sql = "SELECT * FROM country"; 
+  
+  $sql = "SELECT Name,Continent,Region,Population FROM country";
+  // $sql = "SELECT Continent FROM world.country WHERE Name = '" . $_SESSION['pais'] . "'"; 
   $query = $conn -> prepare($sql); 
   $query -> execute(); 
   $results = $query -> fetchAll(PDO::FETCH_OBJ); 
+
+   //var_dump($results);
+   echo $results[0]->Continent;
 
   if($query -> rowCount() > 0)   { 
     echo "<table border='1px'>";
