@@ -1,7 +1,7 @@
 <?php
-$servername = "HEESOOK\SQLEXPRESS";
-$username = "adminworld01";
-$password = "Admin12345";
+$servername = "backendapp-mjhj-01";
+$username = "Student";
+$password = "Pa55w.rd";
 $database = "worldcachi";
 
 try {
@@ -10,6 +10,6 @@ try {
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   echo "Connected successfully";
 } catch(PDOException $e) {
-  echo "Connection failed: " . $e->getMessage();
+  echo "Connection failed: " . $e->getMessage(); 
 }
 ?>
