@@ -1,5 +1,5 @@
 <?php
-$servername = "backendapp-mjhj-01";
+$servername = "mjhj-db-01.database.windows.net";
 $username = "Student";
 $password = "Pa55w.rd";
 $database = "worldcachi";
